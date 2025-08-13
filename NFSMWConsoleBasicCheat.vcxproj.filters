@@ -22,41 +22,41 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Cash.cpp">
+    <ClCompile Include="Cash\Cash.cpp">
       <Filter>Cash</Filter>
     </ClCompile>
-    <ClCompile Include="InfiniteNitrous.cpp">
+    <ClCompile Include="InfiniteNitrous\InfiniteNitrous.cpp">
       <Filter>InfiniteNitrous</Filter>
     </ClCompile>
-    <ClCompile Include="InfiniteSpeedbreaker.cpp">
+    <ClCompile Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.cpp">
       <Filter>InfiniteSpeedbreaker</Filter>
     </ClCompile>
-    <ClCompile Include="NeverBusted.cpp">
+    <ClCompile Include="NeverBusted\NeverBusted.cpp">
       <Filter>NeverBusted</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Includes.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="Cash.h">
+    <ClInclude Include="Cash\Cash.h">
       <Filter>Cash</Filter>
     </ClInclude>
-    <ClInclude Include="InfiniteNitrous.h">
+    <ClInclude Include="InfiniteNitrous\InfiniteNitrous.h">
       <Filter>InfiniteNitrous</Filter>
     </ClInclude>
-    <ClInclude Include="InfiniteSpeedbreaker.h">
+    <ClInclude Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.h">
       <Filter>InfiniteSpeedbreaker</Filter>
     </ClInclude>
-    <ClInclude Include="NeverBusted.h">
+    <ClInclude Include="NeverBusted\NeverBusted.h">
       <Filter>NeverBusted</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Includes.h">
+      <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Rascunho.txt">
+    <Text Include="Source\Rascunho.txt">
       <Filter>Source</Filter>
     </Text>
   </ItemGroup>

@@ -18,6 +18,23 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cash\Cash.cpp" />
+    <ClCompile Include="InfiniteNitrous\InfiniteNitrous.cpp" />
+    <ClCompile Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.cpp" />
+    <ClCompile Include="NeverBusted\NeverBusted.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cash\Cash.h" />
+    <ClInclude Include="InfiniteNitrous\InfiniteNitrous.h" />
+    <ClInclude Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.h" />
+    <ClInclude Include="NeverBusted\NeverBusted.h" />
+    <ClInclude Include="Source\Includes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Source\Rascunho.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -90,6 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source;$(ProjectDir)NeverBusted;$(ProjectDir)InfiniteSpeedbreaker;$(ProjectDir)InfiniteNitrous;$(ProjectDir)Cash;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,23 +140,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Cash.cpp" />
-    <ClCompile Include="InfiniteSpeedbreaker.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="InfiniteNitrous.cpp" />
-    <ClCompile Include="NeverBusted.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Cash.h" />
-    <ClInclude Include="Includes.h" />
-    <ClInclude Include="InfiniteNitrous.h" />
-    <ClInclude Include="InfiniteSpeedbreaker.h" />
-    <ClInclude Include="NeverBusted.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Rascunho.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
