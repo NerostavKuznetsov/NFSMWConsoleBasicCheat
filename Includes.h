@@ -11,6 +11,5 @@
 #include "InfiniteNitrous.h"
 #include "InfiniteSpeedbreaker.h"
 #include "NeverBusted.h"
-#include "MakeCustomProfileNames.h"
 
 DWORD GetProcessIdByName(const std::wstring& processName);
