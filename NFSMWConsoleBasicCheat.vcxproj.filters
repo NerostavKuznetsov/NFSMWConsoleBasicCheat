@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Cash">
+      <UniqueIdentifier>{736c7df2-9e79-4340-a0d1-68a71b686479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NeverBusted">
+      <UniqueIdentifier>{24054f5f-a900-47e9-b58d-6c289b353084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InfiniteSpeedbreaker">
+      <UniqueIdentifier>{2e2a5893-9f8b-4a6b-bb43-055c63955e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InfiniteNitrous">
+      <UniqueIdentifier>{9ac3e8b4-bc61-499e-a4f6-f68ee6bb0c81}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Cash.cpp">
+      <Filter>Cash</Filter>
+    </ClCompile>
+    <ClCompile Include="InfiniteNitrous.cpp">
+      <Filter>InfiniteNitrous</Filter>
+    </ClCompile>
+    <ClCompile Include="InfiniteSpeedbreaker.cpp">
+      <Filter>InfiniteSpeedbreaker</Filter>
+    </ClCompile>
+    <ClCompile Include="NeverBusted.cpp">
+      <Filter>NeverBusted</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Includes.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Cash.h">
+      <Filter>Cash</Filter>
+    </ClInclude>
+    <ClInclude Include="InfiniteNitrous.h">
+      <Filter>InfiniteNitrous</Filter>
+    </ClInclude>
+    <ClInclude Include="InfiniteSpeedbreaker.h">
+      <Filter>InfiniteSpeedbreaker</Filter>
+    </ClInclude>
+    <ClInclude Include="NeverBusted.h">
+      <Filter>NeverBusted</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Rascunho.txt">
+      <Filter>Source</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
