@@ -17,6 +17,9 @@
     <Filter Include="InfiniteNitrous">
       <UniqueIdentifier>{9ac3e8b4-bc61-499e-a4f6-f68ee6bb0c81}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UnlockAllThings">
+      <UniqueIdentifier>{a9d73cad-8052-42db-9988-300f20a51b75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
