@@ -24,6 +24,7 @@
     <ClCompile Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.cpp" />
     <ClCompile Include="NeverBusted\NeverBusted.cpp" />
     <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="UnlockAllThings\UnlockAllThings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cash\Cash.h" />
@@ -31,9 +32,7 @@
     <ClInclude Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.h" />
     <ClInclude Include="NeverBusted\NeverBusted.h" />
     <ClInclude Include="Source\Includes.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Source\Rascunho.txt" />
+    <ClInclude Include="UnlockAllThings\UnlockAllThings.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -107,7 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Source;$(ProjectDir)NeverBusted;$(ProjectDir)InfiniteSpeedbreaker;$(ProjectDir)InfiniteNitrous;$(ProjectDir)Cash;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source;$(ProjectDir)NeverBusted;$(ProjectDir)InfiniteSpeedbreaker;$(ProjectDir)InfiniteNitrous;$(ProjectDir)UnlockAllThings;$(ProjectDir)Cash;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

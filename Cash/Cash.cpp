@@ -1,8 +1,8 @@
 ﻿#include "Includes.h"
 
-uintptr_t BASE_MODULE_ADDRESS = 0x400000; // ➡️ Endereço base sem ASLR.
+uintptr_t BASE_MODULE_ADDRESS = 0x400000;
 uintptr_t CASH_ADDRESS = 0x051CF90; // ➡️ Endereço do primeiro ponteiro a ser resolvido, que aponta para o endereço do dinheiro no jogo.
-unsigned int CASH_OFFSET[] = { 0x10, 0xB4 }; // ➡️ Offsets para resolver o ponteiro do dinheiro no jogo.
+uintptr_t CASH_OFFSET[] = { 0x10, 0xB4 }; // ➡️ Offsets para resolver o ponteiro do dinheiro no jogo.
 
 DWORD ResolverPointerChain(HANDLE hProcess, DWORD BMA_PLUS_CA, unsigned int offsets[], int size) // ➡️ Função para resolver uma cadeia de ponteiros
 {
@@ -37,7 +37,7 @@ _  /    _  __ `/_  ___/_  __ \
 		if (!ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &currentMoney, sizeof(currentMoney), nullptr))
 		{
 			std::wcout << L"\n\n[!] Failed to read memory at address";
-			Sleep(1000);
+			Sleep(1500);
 			break;
 		}
 
@@ -67,7 +67,7 @@ _  /    _  __ `/_  ___/_  __ \
 		{
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
 			std::wcout << L"\n[!] No value entered\n";
-			Sleep(1000);
+			Sleep(1500);
 			continue; 
 		}
 
@@ -80,7 +80,7 @@ _  /    _  __ `/_  ___/_  __ \
 		{
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
 			std::wcout << L"\n[!] Invalid value\n";			
-			Sleep(1000);
+			Sleep(1500);
 			continue; 
 		}
 

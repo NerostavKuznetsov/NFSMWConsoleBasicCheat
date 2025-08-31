@@ -37,6 +37,9 @@
     <ClCompile Include="Source\Main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="UnlockAllThings\UnlockAllThings.cpp">
+      <Filter>UnlockAllThings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cash\Cash.h">
@@ -54,10 +57,8 @@
     <ClInclude Include="Source\Includes.h">
       <Filter>Source</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Source\Rascunho.txt">
-      <Filter>Source</Filter>
-    </Text>
+    <ClInclude Include="UnlockAllThings\UnlockAllThings.h">
+      <Filter>UnlockAllThings</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
