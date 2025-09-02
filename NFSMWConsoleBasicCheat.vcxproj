@@ -34,9 +34,6 @@
     <ClInclude Include="Source\Includes.h" />
     <ClInclude Include="UnlockAllThings\UnlockAllThings.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Rascunho.txt" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
