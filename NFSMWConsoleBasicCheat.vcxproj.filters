@@ -61,4 +61,7 @@
       <Filter>UnlockAllThings</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Rascunho.txt" />
+  </ItemGroup>
 </Project>
