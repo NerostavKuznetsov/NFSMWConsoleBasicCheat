@@ -1,7 +1,7 @@
 ﻿#include "Includes.h" // ➡️ Inclui o arquivo de cabeçalho com todas as bibliotecas e definições necessárias
 
-uintptr_t BASE_MODULE_ADDRESS = 0x400000; // ➡️ Endereço base do módulo (speed.exe), geralmente é 0x400000 para executáveis do Windows.
-uintptr_t CASH_ADDRESS = 0x051CF90; // ➡️ Endereço do primeiro ponteiro a ser resolvido, que aponta para o endereço do dinheiro no jogo.
+uintptr_t BASE_MODULE_ADDRESS = 0x400000; // ➡️ Endereço base do módulo (speed.exe), geralmente é 0x400000 para executáveis do Windows
+uintptr_t CASH_ADDRESS = 0x051CF90; // ➡️ Endereço do primeiro ponteiro a ser resolvido, que aponta para o endereço do dinheiro no jogo
 uintptr_t CASH_OFFSET[] = { 0x10, 0xB4 }; // ➡️ Offsets para resolver o ponteiro do dinheiro no jogo.
 
 DWORD ResolverPointerChain(HANDLE hProcess, DWORD BMA_PLUS_CA, unsigned int offsets[], int size) // ➡️ Função para resolver uma cadeia de ponteiros
@@ -32,9 +32,9 @@ _  /    _  __ `/_  ___/_  __ \
 / /___  / /_/ /_(__  )_  / / /
 \____/  \__,_/ /____/ /_/ /_/  )"; // ➡️ Fim da arte ASCII
 
-		unsigned int currentMoney = 0; // ➡️ Variável para armazenar o valor atual do dinheiro 
+		unsigned int currentMoney = 0; // ➡️ Variável para armazenar o valor atual do dinheiro
 
-		if (!ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &currentMoney, sizeof(currentMoney), nullptr)) // ➡️ Lê o valor atual do dinheiro na memória do processo.
+		if (!ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &currentMoney, sizeof(currentMoney), nullptr)) // ➡️ Lê o valor atual do dinheiro na memória do processo
 		{
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para vermelho brilhante
 			std::wcout << L"\n\n[!] Failed to read memory at address!"; // ➡️ Mensagem de erro se a leitura falhar
@@ -85,7 +85,7 @@ _  /    _  __ `/_  ___/_  __ \
 			continue; // ➡️ Continua o loop se a conversão falhar
 		}
 
-		if (WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &NewMoney, sizeof(NewMoney), nullptr))  // ➡️ Escreve o novo valor de dinheiro na memória do processo.
+		if (WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &NewMoney, sizeof(NewMoney), nullptr))  // ➡️ Escreve o novo valor de dinheiro na memória do processo
 		{
 			std::wcout << L"\n[*] Money changed to: " << NewMoney << L"\n"; // ➡️ Confirmação de que o valor foi alterado com sucesso
 		}

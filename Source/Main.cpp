@@ -52,60 +52,61 @@ _  /|  / _  __/   ____/ /_  /  / / __ |/ |/ /   _/_____/     / /___  / /_/ /  / 
 
 DWORD GetProcessIdByName(const std::wstring& processName) // ➡️ Pegar o ID do processo (PID) = (PROCESS ID) pelo nome do processo 
 {
-    DWORD processID = 0;
-    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+	DWORD processID = 0; // ➡️ Inicializa o ID do processo como 0
+	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0); // ➡️ Cria um snapshot de todos os processos em execução no sistema
     
-    if(hSnapshot != INVALID_HANDLE_VALUE)
+	if (hSnapshot != INVALID_HANDLE_VALUE) // ➡️ Verifica se o snapshot foi criado com sucesso
     {
-		PROCESSENTRY32 PE32;
-        PE32.dwSize = sizeof(PROCESSENTRY32);
+		PROCESSENTRY32 PE32; // ➡️ Estrutura para armazenar informações sobre o processo
+		PE32.dwSize = sizeof(PROCESSENTRY32); // ➡️ Define o tamanho da estrutura
 
-        if (Process32FirstW(hSnapshot, &PE32))
+		if (Process32FirstW(hSnapshot, &PE32)) // ➡️ Obtém informações sobre o primeiro processo no snapshot
         {
-            do
+			do // ➡️ Loop através dos processos no snapshot
             {
-                if (processName == PE32.szExeFile)
+				if (processName == PE32.szExeFile) // ➡️ Compara o nome do processo com o nome fornecido
                 {
-					processID = PE32.th32ProcessID;
-                    break;
+					processID = PE32.th32ProcessID; // ➡️ Se encontrar uma correspondência, armazena o ID do processo
+					break; // ➡️ Sai do loop se o processo for encontrado
                 }
-            } while (Process32NextW(hSnapshot, &PE32));
+			} while (Process32NextW(hSnapshot, &PE32)); // ➡️ Move para o próximo processo no snapshot
 		}  
-        CloseHandle(hSnapshot);
-		return processID;
+		CloseHandle(hSnapshot); // ➡️ Fecha o handle do snapshot para liberar recursos
+		return processID; // ➡️ Retorna o ID do processo (ou 0 se não encontrado)
     }
 }
 
 DWORD GetModuleBaseAddress(DWORD ProcID, const wchar_t* modBaseName) // ➡️ Pegar o endereço base do processo .exe (PID)
 {
     DWORD baseAddress = 0;
-    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, ProcID);
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, ProcID); // ➡️ Cria um snapshot dos módulos (DLLs e o próprio .exe) carregados no processo especificado por ProcID
+	// TH32CS_SNAPMODULE32 é necessário para capturar módulos de 32 bits em um processo de 64 bits
 
-    if (hSnapshot != INVALID_HANDLE_VALUE)
+	if (hSnapshot != INVALID_HANDLE_VALUE) // ➡️ Verifica se o snapshot foi criado com sucesso
     {
-        MODULEENTRY32W modBaseEntry;
-        modBaseEntry.dwSize = sizeof(modBaseEntry);
-        if (Module32FirstW(hSnapshot, &modBaseEntry))
+		MODULEENTRY32W modBaseEntry; // ➡️ Estrutura para armazenar informações sobre o módulo
+		modBaseEntry.dwSize = sizeof(modBaseEntry); // ➡️ Define o tamanho da estrutura
+		if (Module32FirstW(hSnapshot, &modBaseEntry)) // ➡️ Obtém informações sobre o primeiro módulo no snapshot
         {
-            do
-            {
-                if (!_wcsicmp(modBaseEntry.szModule, modBaseName))
+			do // ➡️ Loop através dos módulos no snapshot
+            { 
+				if (!_wcsicmp(modBaseEntry.szModule, modBaseName)) // ➡️ Compara o nome do módulo com o nome fornecido (case-insensitive)
                 {
-                    baseAddress = (DWORD)(modBaseEntry.modBaseAddr);
-                    break;
+					baseAddress = (DWORD)(modBaseEntry.modBaseAddr); // ➡️ Se encontrar uma correspondência, armazena o endereço base do módulo
+					break; // ➡️ Sai do loop se o módulo for encontrado
                 }
-            } while (Module32NextW(hSnapshot, &modBaseEntry));
+			} while (Module32NextW(hSnapshot, &modBaseEntry)); // ➡️ Move para o próximo módulo no snapshot
         }
     }
-    CloseHandle(hSnapshot);
-    return baseAddress;
+	CloseHandle(hSnapshot); // ➡️ Fecha o handle do snapshot para liberar recursos
+	return baseAddress; // ➡️ Retorna o endereço base do módulo (ou 0 se não encontrado)
 }
 
 int main()
 {
     _tsetlocale(LC_ALL, _T("PORTUGUESE")); // Posso usar -> setlocale(LC_ALL, "PT_BR.UTF-8"); 
-	setlocale(LC_ALL, "PT_BR.UTF-8"); // ➡️ Português do Brasil com UTF-8. Isso garante que acentos, caracteres especiais e algumas formatações de texto funcionem corretamente.
-    SetConsoleOutputCP(CP_UTF8); // ➡️ Configura o Console do Windows para UTF-8, permitindo que emojis e outros caracteres Unicode apareçam corretamente na tela.
+	setlocale(LC_ALL, "PT_BR.UTF-8"); // ➡️ Português do Brasil com UTF-8. Isso garante que acentos, caracteres especiais e algumas formatações de texto funcionem corretamente
+    SetConsoleOutputCP(CP_UTF8); // ➡️ Configura o Console do Windows para UTF-8, permitindo que emojis e outros caracteres Unicode apareçam corretamente na tela
 	SetConsoleTitleA("NFSMW - NK Cheats"); // ➡️ Define o título da janela do console
 
 	DWORD PID = GetProcessIdByName(L"speed.exe"); // ➡️ Pega o PID do processo speed.exe

@@ -24,7 +24,7 @@ __/ /  _  / / /  __/ _  / _  / / /  / / /_ /  __/     ____/ /__  /_/ /  __/  __/
 		return; // ➡️ Sai da função se a leitura falhar
     }
 
-	bool Status = currentValue[0] == bytes_OFF[0] && currentValue[1] == bytes_OFF[1]; // ➡️ Se os bytes atuais forem iguais aos bytes_OFF(disabled), Status será true, indicando que o cheat está desligado. Se forem diferentes, Status será false, indicando que o cheat está ligado.
+	bool Status = currentValue[0] == bytes_OFF[0] && currentValue[1] == bytes_OFF[1]; // ➡️ Se os bytes atuais forem iguais aos bytes_OFF(disabled), Status será true, indicando que o cheat está desligado. Se forem diferentes, Status será false, indicando que o cheat está ligado
 
 	std::wcout << L"\n\n[!] Infinite Speedbreaker is " << (Status ? L"disabled\n" : L"enabled\n"); // ➡️ Exibe o status atual do cheat
 	std::wcout << L"[!] Press INSERT to enable/disable Infinite Speedbreaker or ESC to return to the main menu...\n"; // ➡️ Instruções para o usuário
@@ -55,7 +55,7 @@ __/ /  _  / / /  __/ _  / _  / / /  / / /_ /  __/     ____/ /__  /_/ /  __/  __/
 
 /* Note:
 * 
-* Variável simples "BYTE CurrentValue = "  precisa de &.
+* Variável simples "BYTE CurrentValue = "  precisa de &
 *
 * Array  "BYTE CurrentValue[2] = " já vira ponteiro automaticamente, então não precisa de &
 * 
@@ -79,8 +79,8 @@ __/ /  _  / / /  __/ _  / _  / / /  / / /_ /  __/     ____/ /__  /_/ /  __/  __/
 * 
 * Aqui a pergunta mudou: “O que está na memória é igual aos bytes de OFF?”
 * 
-* Se sim → Status = true → isso significa que o cheat está desligado.
-* Se não → Status = false → isso significa que o cheat já está ligado.
+* Se sim → Status = true → isso significa que o cheat está desligado
+* Se não → Status = false → isso significa que o cheat já está ligado
 * 
 * //////////////////////////////////////////////////////////////////////////////////////////////////////////
 *
@@ -88,7 +88,7 @@ __/ /  _  / / /  __/ _  / _  / / /  / / /_ /  __/     ____/ /__  /_/ /  __/  __/
 * 
 * Aqui a pergunta é: “O que está na memória é igual aos bytes de ON?”
 *
-* Se sim → Status = true → isso significa que o cheat já está ligado.
-* Se não → Status = false → isso significa que o cheat está desligado.
+* Se sim → Status = true → isso significa que o cheat já está ligado
+* Se não → Status = false → isso significa que o cheat está desligado
 * 
 */
