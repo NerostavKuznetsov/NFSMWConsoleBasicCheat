@@ -32,7 +32,7 @@ _  /    _  __ `/_  ___/_  __ \
 / /___  / /_/ /_(__  )_  / / /
 \____/  \__,_/ /____/ /_/ /_/  )"; // ➡️ Fim da arte ASCII
 
-		unsigned int currentMoney = Unknown; // ➡️ Variável para armazenar o valor atual do dinheiro 
+		unsigned int currentMoney = 0; // ➡️ Variável para armazenar o valor atual do dinheiro 
 
 		if (!ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &currentMoney, sizeof(currentMoney), nullptr)) // ➡️ Lê o valor atual do dinheiro na memória do processo.
 		{

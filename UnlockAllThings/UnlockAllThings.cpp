@@ -19,7 +19,7 @@ _  / / /__  __ \_  /_  __ \  ___/_  //_/    __  /| |_  /__  /    __  /  __  __ \
     if (!ReadProcessMemory(hProcess, (LPCVOID)0x926124, currentValue, sizeof(currentValue), nullptr)) 
     {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
-        std::wcout << L"\n\n[!] Failed to read memory at address!\n";
+        std::wcout << L"\n[!] Failed to read memory at address!\n";
         Sleep(1666);
         return;
     }

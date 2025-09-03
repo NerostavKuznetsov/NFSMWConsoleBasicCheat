@@ -35,11 +35,11 @@ _  /|  / _  __/   ____/ /_  /  / / __ |/ |/ /   _/_____/     / /___  / /_/ /  / 
     std::wcout << L"╔═════════════════════════════════════╗\n";
     std::wcout << L"║              MAIN MENU              ║\n";
     std::wcout << L"╠═════════════════════════════════════╣\n";
-    std::wcout << L"║ 1  ➡️  Cash                         ║\n";
+    std::wcout << L"║ 1  ➡️  Cash                         ║\n"; // OK
     std::wcout << L"║ 2  ➡️  Infinite Nitrous             ║\n"; // OK
     std::wcout << L"║ 3  ➡️  Infinite Speedbreaker        ║\n"; // OK
     std::wcout << L"║ 4  ➡️  Never Busted                 ║\n"; // OK
-    std::wcout << L"║ 5  ➡️  Unlock All Things            ║\n"; // 
+    std::wcout << L"║ 5  ➡️  Unlock All Things            ║\n"; // OK
     std::wcout << L"║ 6  ➡️  *                            ║\n";
     std::wcout << L"║ 7  ➡️  *                            ║\n";
     std::wcout << L"║ 8  ➡️  *                            ║\n";
