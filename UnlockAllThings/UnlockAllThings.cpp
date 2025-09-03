@@ -18,12 +18,13 @@ _  / / /__  __ \_  /_  __ \  ___/_  //_/    __  /| |_  /__  /    __  /  __  __ \
 
     if (!ReadProcessMemory(hProcess, (LPCVOID)0x926124, currentValue, sizeof(currentValue), nullptr)) 
     {
-        std::wcout << L"\n\n[!] Failed to read memory at address\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
+        std::wcout << L"\n\n[!] Failed to read memory at address!\n";
         Sleep(1666);
         return;
     }
 
-    bool Status = currentValue[0] == bytes_OFF[0];
+	bool Status = currentValue[0] == bytes_OFF[0];                                                                                           
 
     std::wcout << L"\n\n[!] UnlockAllThings is " << (Status ? L"disabled\n" : L"enabled\n");
     std::wcout << L"[!] Press INSERT to enable/disable or ESC to return to the main menu...\n";

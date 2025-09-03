@@ -12,25 +12,25 @@
 * [!] Este programa é um software livre, você pode redistribuí-lo e/ou modificá-lo como quiser. '-'
 */
 
-void ShowMenu() 
+void ShowMenu() // ➡️ Função para exibir o menu principal
 {
-    system("cls");
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+	system("cls"); // ➡️ Limpa a tela do console
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY); // Define a cor do texto para verde brilhante
     std::wcout << R"(
 _____   _______________________  _____       __              _________                         ______          ________              _____           ______________             _____ 
 ___  | / /__  ____/_  ___/__   |/  /_ |     / /              __  ____/____________________________  /____      ___  __ )_____ __________(_)______    __  ____/__  /____________ __  /_
 __   |/ /__  /_   _____ \__  /|_/ /__ | /| / /  ________     _  /    _  __ \_  __ \_  ___/  __ \_  /_  _ \     __  __  |  __ `/_  ___/_  /_  ___/    _  /    __  __ \  _ \  __ `/  __/
 _  /|  / _  __/   ____/ /_  /  / / __ |/ |/ /   _/_____/     / /___  / /_/ /  / / /(__  )/ /_/ /  / /  __/     _  /_/ // /_/ /_(__  )_  / / /__      / /___  _  / / /  __/ /_/ // /_  
-/_/ |_/  /_/      /____/ /_/  /_/  ____/|__/                 \____/  \____//_/ /_//____/ \____//_/  \___/      /_____/ \__,_/ /____/ /_/  \___/      \____/  /_/ /_/\___/\__,_/ \__/   )";
+/_/ |_/  /_/      /____/ /_/  /_/  ____/|__/                 \____/  \____//_/ /_//____/ \____//_/  \___/      /_____/ \__,_/ /____/ /_/  \___/      \____/  /_/ /_/\___/\__,_/ \__/   )"; 
 
     std::wcout << "\n\n";
     std::wcout << "                                                                                                                                                                          By: Nerostav Kuznetsov\n";
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para roxo brilhante
     std::wcout << "Steam:    https://steamcommunity.com/profiles/76561198304587027   \n";
     std::wcout << "Insta:    https://instagram.com/nrstv_kuznetsov                    \n";
     std::wcout << "Github:   https://github.com/NerostavKuznetsov                      \n";
     std::wcout << "Youtub:   https://youtube.com/@Kuzntsv-666                           \n";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY); // ➡️
     std::wcout << L" \n";
     std::wcout << L"╔═════════════════════════════════════╗\n";
     std::wcout << L"║              MAIN MENU              ║\n";
@@ -76,7 +76,7 @@ DWORD GetProcessIdByName(const std::wstring& processName) // ➡️ Pegar o ID d
     }
 }
 
-DWORD GetModuleBaseAddress(DWORD ProcID, const wchar_t* modBaseName) // ➡️ Pegar o endereço base do processo <speed.exe> (PID)
+DWORD GetModuleBaseAddress(DWORD ProcID, const wchar_t* modBaseName) // ➡️ Pegar o endereço base do processo .exe (PID)
 {
     DWORD baseAddress = 0;
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, ProcID);
@@ -106,93 +106,93 @@ int main()
     _tsetlocale(LC_ALL, _T("PORTUGUESE")); // Posso usar -> setlocale(LC_ALL, "PT_BR.UTF-8"); 
 	setlocale(LC_ALL, "PT_BR.UTF-8"); // ➡️ Português do Brasil com UTF-8. Isso garante que acentos, caracteres especiais e algumas formatações de texto funcionem corretamente.
     SetConsoleOutputCP(CP_UTF8); // ➡️ Configura o Console do Windows para UTF-8, permitindo que emojis e outros caracteres Unicode apareçam corretamente na tela.
-    SetConsoleTitleA("NFSMW - NK Cheats");
+	SetConsoleTitleA("NFSMW - NK Cheats"); // ➡️ Define o título da janela do console
 
-    DWORD PID = GetProcessIdByName(L"speed.exe");
+	DWORD PID = GetProcessIdByName(L"speed.exe"); // ➡️ Pega o PID do processo speed.exe
      
     while (PID == 0) // ➡️ Enquanto o PID for igual zero, ou seja, enquanto o processo speed.exe não tiver sido encontrado, continua repetindo o código dentro de 'while' = loop   >> if (PID != 0) // break removido, while ja quebra quando o processo é encontrado
     {
-        system("cls");
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+		system("cls"); // ➡️ Limpa a tela do console
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para verde brilhante
 
-        std::wcout << L"[~] waiting for speed.exe";
-        for (int i = 0; i < 6; i++)
+		std::wcout << L"[~] waiting for speed.exe"; // ➡️ Mensagem de espera
+		for (int i = 0; i < 6; i++) // ➡️ Animação de pontos
         {
-            std::wcout << L".";
-            Sleep(666);
+			std::wcout << L"."; // ➡️ Imprime um ponto
+			Sleep(666); // ➡️ Pausa por 666 milissegundos
         }
-        PID = GetProcessIdByName(L"speed.exe");
+		PID = GetProcessIdByName(L"speed.exe"); // ➡️ Atualiza o PID a cada iteração do loop
 
     }
 
-    uintptr_t modBaseAddr = GetModuleBaseAddress(PID, L"speed.exe");
+	uintptr_t modBaseAddr = GetModuleBaseAddress(PID, L"speed.exe"); // ➡️ Pega o endereço base do módulo speed.exe
 
-    HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, PID);
-    BOOL running = TRUE;
+	HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, PID); // ➡️ Abre o processo com todas as permissões
+	BOOL running = TRUE; // ➡️ Variável para controlar o loop do menu principal
 
-    while (running)
+	while (running) // ➡️ Loop principal do menu
     {
-        ShowMenu();
-        std::wcout << L"\n[!] Base address 0x" << std::hex << modBaseAddr << L"\n";
-        std::wcout << L"[!] ProcessID: " << std::dec << PID << L"\n";
-        std::wcout << L"[?] Enter your option (0-9): ";
-        std::wstring input;
+		ShowMenu(); // ➡️ Exibe o menu principal
+		std::wcout << L"\n[!] Base address 0x" << std::hex << modBaseAddr << L"\n"; // ➡️ Exibe o endereço base do módulo em hexadecimal
+		std::wcout << L"[!] ProcessID: " << std::dec << PID << L"\n"; // ➡️ Exibe o PID do processo em decimal
+		std::wcout << L"[?] Enter your option (0-9): "; // ➡️ Solicita ao usuário que insira uma opção
+		std::wstring input; // ➡️ Usado para armazenar a entrada do usuário
 
-        while (true)
+		while (true) // ➡️ Loop para capturar a entrada do usuário
         {
             wchar_t ch = _getwch();
 
-            if (ch == 13) break;  
-            if (ch == L'\b' && !input.empty())
+			if (ch == 13) break; // ➡️ ENTER 
+			if (ch == L'\b' && !input.empty()) // ➡️ BACKSPACE
             {
-                input.pop_back(); 
-                std::wcout << L"\b \b";
+				input.pop_back(); // ➡️ Se o usuário pressionar BACKSPACE e a entrada não estiver vazia, remove o último caractere da entrada
+				std::wcout << L"\b \b"; // ➡️ Move o cursor para trás, imprime um espaço em branco para apagar o caractere e move o cursor de volta
             }
-            else if (iswdigit(ch) || ch == L'z') // aceita z também
+			else if (iswdigit(ch) || ch == L'z') // ➡️ Aceita apenas dígitos ou 'z' para sair
             {
-                input += ch;
-                std::wcout << ch;
+				input += ch; // ➡️ Adiciona o caractere à entrada
+				std::wcout << ch; // ➡️ Exibe o caractere digitado
             }
         }
 
-        if (input.empty())
+		if (input.empty()) // ➡️ Verifica se a entrada está vazia
         {
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
-            std::wcout << L"\n[!] Empty option\n";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para vermelho brilhante
+			std::wcout << L"\n[!] Empty option\n"; // ➡️ Mensagem de erro se a entrada estiver vazia
             Sleep(1666);
 			continue; // ➡️ Continua o loop se a entrada for vazia
         }
-        else if (input.length() > 1)
+		else if (input.length() > 1) // ➡️ Verifica se a entrada tem mais de um caractere
         {
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para vermelho brilhante
             std::wcout << L"\n[!] Invalid option. Please enter a single digit or 'z' to exit\n";
             Sleep(1666);
 			continue; // ➡️ Continua o loop se a entrada for inválida
         }
         
-		wchar_t option = input[0]; 
+		wchar_t option = input[0]; // ➡️ Pega o primeiro caractere da entrada como a opção selecionada
 
-		switch (option) 
+		switch (option) // ➡️ Switch para selecionar a função com base na opção do usuário
         {
         case '1':
 			system("cls");
-            FunctionCash(hProcess);
-            break;
+			FunctionCash(hProcess); // ➡️ Chama a função para adicionar dinheiro
+			break; // ➡️ Sai do switch
         case '2':  
             system("cls");
-			FunctionInfiniteNitrous(hProcess);
-            break;
+			FunctionInfiniteNitrous(hProcess); // ➡️ Chama a função para Nitrous Infinito
+			break;
         case '3':
             system("cls");
-            FunctionInfiniteSpeedbreaker(hProcess);
+			FunctionInfiniteSpeedbreaker(hProcess); // ➡️ Chama a função para Speedbreaker Infinito
             break;
         case '4':
             system("cls");
-			FunctionNeverBusted(hProcess);
+			FunctionNeverBusted(hProcess); // ➡️ Chama a função para Never Busted
             break;
         case '5':
 			system("cls");
-            FunctionUnlockAllThings(hProcess);
+			FunctionUnlockAllThings(hProcess); // ➡️ Chama a função para Desbloquear Tudo
             break;
         case 'z':
             system("cls");

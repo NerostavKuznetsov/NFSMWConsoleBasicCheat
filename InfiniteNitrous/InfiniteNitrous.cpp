@@ -17,6 +17,7 @@ __/ /  _  / / /  __/ _  / _  / / /  / / /_ /  __/     _  /|  / _  / / /_ _  /   
 
     if (!ReadProcessMemory(hProcess, (LPCVOID)Instruction_Address, currentValue, sizeof(currentValue), nullptr))
     {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
         std::wcout << L"\n\n[!] Failed to read memory at address!";
         Sleep(1666);
         return;
