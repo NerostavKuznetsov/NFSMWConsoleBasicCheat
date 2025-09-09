@@ -16,7 +16,7 @@ ______  ___             ______
 ___   |/  /_____ __________  /_____________________
 __  /|_/ /_  __ `/_  ___/_  //_/  _ \_  ___/_  ___/
 _  /  / / / /_/ /_  /   _  ,<  /  __/  /   _(__  ) 
-/_/  /_/  \__,_/ /_/    /_/|_| \___//_/    /____/   )"; // ➡️ Fim da arte ASCII
+/_/  /_/  \__,_/ /_/    /_/|_| \___//_/    /____/   )"; // ➡️ Fim da arte ASCII 
 
 	uintptr_t MarkersAddresses[] = { 0x7B3D7D, 0x7B3E19, 0x7A7A3C, 0x7A7ABE }; // ➡️ Array com os endereços dos valores dos marcadores
 	BYTE CurrentValue[4] = { 0 }; // ➡️ Array para armazenar os valores atuais lidos da memória
