@@ -9,29 +9,29 @@
 * | [~] Esperando       |
 * |---------------------|
 *
-* [!] Este programa é um software livre, você pode redistribuí-lo e/ou modificá-lo como quiser. '-'
+* [!] Este programa é um software livre, você pode redistribuí-lo e/ou modificá-lo como quiser. 
 */
 
 void ShowMenu() // ➡️ Função para exibir o menu principal
 {
 	system("cls"); // ➡️ Limpa a tela do console
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY); // Define a cor do texto para verde brilhante
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para verde brilhante
     std::wcout << R"(
 _____   _______________________  _____       __              _________                         ______          ________              _____           ______________             _____ 
 ___  | / /__  ____/_  ___/__   |/  /_ |     / /              __  ____/____________________________  /____      ___  __ )_____ __________(_)______    __  ____/__  /____________ __  /_
 __   |/ /__  /_   _____ \__  /|_/ /__ | /| / /  ________     _  /    _  __ \_  __ \_  ___/  __ \_  /_  _ \     __  __  |  __ `/_  ___/_  /_  ___/    _  /    __  __ \  _ \  __ `/  __/
 _  /|  / _  __/   ____/ /_  /  / / __ |/ |/ /   _/_____/     / /___  / /_/ /  / / /(__  )/ /_/ /  / /  __/     _  /_/ // /_/ /_(__  )_  / / /__      / /___  _  / / /  __/ /_/ // /_  
-/_/ |_/  /_/      /____/ /_/  /_/  ____/|__/                 \____/  \____//_/ /_//____/ \____//_/  \___/      /_____/ \__,_/ /____/ /_/  \___/      \____/  /_/ /_/\___/\__,_/ \__/   )"; 
+/_/ |_/  /_/      /____/ /_/  /_/  ____/|__/                 \____/  \____//_/ /_//____/ \____//_/  \___/      /_____/ \__,_/ /____/ /_/  \___/      \____/  /_/ /_/\___/\__,_/ \__/   )"; // ➡️ Fim da arte ASCII 
 
-    std::wcout << "\n\n";
-    std::wcout << "                                                                                                                                                                          By: Nerostav Kuznetsov\n"; 
+	std::wcout << "\n\n"; // ➡️ Duas novas linhas para espaçamento
+	std::wcout << "                                                                                                                                                                          By: Nerostav Kuznetsov\n"; // Typo: By -> BY 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para roxo brilhante
-	std::wcout << "Steam:    https://steamcommunity.com/profiles/76561198304587027   \n"; // Typo: Steam -> STEAM
-	std::wcout << "Insta:    https://instagram.com/nrstv_kuznetsov                    \n"; // Typo: Insta -> Instagram
-	std::wcout << "Github:   https://github.com/NerostavKuznetsov                      \n"; // Typo: GitHub -> Github
-	std::wcout << "Youtub:   https://youtube.com/@Kuzntsv-666                           \n"; // Typo: Youtub -> Youtube
+	std::wcout << "Steam:    https://steamcommunity.com/profiles/76561198304587027     \n"; // Typo: Steam -> STEAM
+	std::wcout << "Insta:    https://instagram.com/nrstv_kuznetsov                      \n"; // Typo: Insta -> Instagram
+	std::wcout << "Github:   https://github.com/NerostavKuznetsov/NFSMWConsoleBasicCheat \n"; // Typo: GitHub -> Github
+	std::wcout << "Youtub:   https://youtube.com/@Kuzntsv-666                             \n"; // Typo: Youtub -> Youtube
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para verde brilhante
-    std::wcout << L" \n";
+	std::wcout << L" \n"; // ➡️ Nova linha para espaçamento
     std::wcout << L"╔═════════════════════════════════════╗\n";
     std::wcout << L"║              MAIN MENU              ║\n";
     std::wcout << L"╠═════════════════════════════════════╣\n";
@@ -76,30 +76,30 @@ DWORD GetProcessIdByName(const std::wstring& processName) // ➡️ Pegar o ID d
     }
 }
 
-DWORD GetModuleBaseAddress(DWORD ProcID, const wchar_t* modBaseName) // ➡️ Pegar o endereço base do processo .exe (PID)
+DWORD GetModuleBaseAddress(DWORD ProcessID, const wchar_t* modBaseName) // ➡️ Pegar o endereço base do processo .exe (PID)
 {
-    DWORD baseAddress = 0;
-    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, ProcID); // ➡️ Cria um snapshot dos módulos (DLLs e o próprio .exe) carregados no processo especificado por ProcID
+	DWORD baseAddress = 0; // ➡️ Inicializa o endereço base como 0
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, ProcessID); // ➡️ Cria um snapshot dos módulos (DLLs e o próprio .exe) carregados no processo especificado por ProcID
 	// TH32CS_SNAPMODULE32 é necessário para capturar módulos de 32 bits em um processo de 64 bits
 
 	if (hSnapshot != INVALID_HANDLE_VALUE) // ➡️ Verifica se o snapshot foi criado com sucesso
     {
-		MODULEENTRY32W modBaseEntry; // ➡️ Estrutura para armazenar informações sobre o módulo
-		modBaseEntry.dwSize = sizeof(modBaseEntry); // ➡️ Define o tamanho da estrutura
-		if (Module32FirstW(hSnapshot, &modBaseEntry)) // ➡️ Obtém informações sobre o primeiro módulo no snapshot
+		MODULEENTRY32W MEW32; // ➡️ Estrutura para armazenar informações sobre o módulo
+		MEW32.dwSize = sizeof(MEW32); // ➡️ Define o tamanho da estrutura
+		if (Module32FirstW(hSnapshot, &MEW32)) // ➡️ Obtém informações sobre o primeiro módulo no snapshot
         {
 			do // ➡️ Loop através dos módulos no snapshot
             { 
-				if (!_wcsicmp(modBaseEntry.szModule, modBaseName)) // ➡️ Compara o nome do módulo com o nome fornecido (case-insensitive)
+				if (!_wcsicmp(MEW32.szModule, modBaseName)) // ➡️ Compara o nome do módulo com o nome fornecido (case-insensitive) - >   _wcsicmp → ignora maiúsculas/minúsculas (case-insensitive). = "Outlast2.exe" == "OUTLAST2.EXE"
                 {
-					baseAddress = (DWORD)(modBaseEntry.modBaseAddr); // ➡️ Se encontrar uma correspondência, armazena o endereço base do módulo
+					baseAddress = (DWORD)(MEW32.modBaseAddr); // ➡️ Se encontrar uma correspondência, armazena o endereço base do módulo
 					break; // ➡️ Sai do loop se o módulo for encontrado
                 }
-			} while (Module32NextW(hSnapshot, &modBaseEntry)); // ➡️ Move para o próximo módulo no snapshot
+			} while (Module32NextW(hSnapshot, &MEW32)); // ➡️ Move para o próximo módulo no snapshot
         }
+		CloseHandle(hSnapshot); // ➡️ Fecha o handle do snapshot para liberar recursos
+		return baseAddress; // ➡️ Retorna o endereço base do módulo (ou 0 se não encontrado)
     }
-	CloseHandle(hSnapshot); // ➡️ Fecha o handle do snapshot para liberar recursos
-	return baseAddress; // ➡️ Retorna o endereço base do módulo (ou 0 se não encontrado)
 }
 
 int main() // ➡️ Função principal do programa
@@ -123,7 +123,6 @@ int main() // ➡️ Função principal do programa
 			Sleep(666); // ➡️ Pausa por 666 milissegundos
         }
 		PID = GetProcessIdByName(L"speed.exe"); // ➡️ Atualiza o PID a cada iteração do loop
-
     }
 
 	uintptr_t modBaseAddr = GetModuleBaseAddress(PID, L"speed.exe"); // ➡️ Pega o endereço base do módulo speed.exe

@@ -28,6 +28,7 @@ _  /  / / / /_/ /_  /   _  ,<  /  __/  /   _(__  )
 		if (!ReadProcessMemory(hProcess, (LPCVOID)MarkersAddresses[i], &CurrentValue[i], sizeof(CurrentValue[i]), nullptr)) // ➡️ Lê o valor atual do marcador na memória do processo
         {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para vermelho brilhante
+			std::wcout << L"\n\n[!] Failed to read memory at address!"; // ➡️ Mensagem de erro se a leitura falhar
 			Sleep(1666); // ➡️ Pausa para permitir que o usuário veja a mensagem de erro
 			return; // ➡️ Sai da função se a leitura falhar
         }
