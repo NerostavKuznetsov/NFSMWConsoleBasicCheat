@@ -22,7 +22,7 @@
     <ClCompile Include="Cash\Cash.cpp" />
     <ClCompile Include="InfiniteNitrous\InfiniteNitrous.cpp" />
     <ClCompile Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.cpp" />
-    <ClCompile Include="Markers.cpp" />
+    <ClCompile Include="Markers\Markers.cpp" />
     <ClCompile Include="NeverBusted\NeverBusted.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="UnlockAllThings\UnlockAllThings.cpp" />

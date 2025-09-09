@@ -43,7 +43,7 @@
     <ClCompile Include="UnlockAllThings\UnlockAllThings.cpp">
       <Filter>UnlockAllThings</Filter>
     </ClCompile>
-    <ClCompile Include="Markers.cpp">
+    <ClCompile Include="Markers\Markers.cpp">
       <Filter>Markers</Filter>
     </ClCompile>
   </ItemGroup>
