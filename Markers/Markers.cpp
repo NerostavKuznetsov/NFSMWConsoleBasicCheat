@@ -4,7 +4,7 @@
 * Selectable Marker Count =                 0x7B3D7D; -> Exact count Address = 2
 * Selectable Marker Count 2 =               0x7B3E19; -> Visual = 2
 * Selections remaining =                    0x7A7A3C; -> Visual = 2
-* You can now select X markers from Y =     0x7A7ABE; -> Visual = 2 fff
+* You can now select X markers from Y =     0x7A7ABE; -> Visual = 2 
 */
 
 void FunctionMarkers(HANDLE hProcess) // ➡️ Função principal para manipular os marcadores no jogo
