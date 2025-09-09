@@ -16,7 +16,7 @@ _  / / /__  __ \_  /_  __ \  ___/_  //_/    __  /| |_  /__  /    __  /  __  __ \
     BYTE bytes_OFF[] = { 0 };
     BYTE currentValue[1] = { 0 };
 
-    if (!ReadProcessMemory(hProcess, (LPCVOID)0x926124, currentValue, sizeof(currentValue), nullptr)) 
+    if (!ReadProcessMemory(hProcess, (LPCVOID)Address, currentValue, sizeof(currentValue), nullptr)) 
     {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
         std::wcout << L"\n[!] Failed to read memory at address!\n";

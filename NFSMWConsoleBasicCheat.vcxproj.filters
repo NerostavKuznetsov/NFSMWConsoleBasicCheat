@@ -20,6 +20,9 @@
     <Filter Include="UnlockAllThings">
       <UniqueIdentifier>{a9d73cad-8052-42db-9988-300f20a51b75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Markers">
+      <UniqueIdentifier>{c0d8a25e-3aad-4444-ad96-6305bd202cf1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cash\Cash.cpp">
@@ -39,6 +42,9 @@
     </ClCompile>
     <ClCompile Include="UnlockAllThings\UnlockAllThings.cpp">
       <Filter>UnlockAllThings</Filter>
+    </ClCompile>
+    <ClCompile Include="Markers.cpp">
+      <Filter>Markers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,8 +66,8 @@
     <ClInclude Include="UnlockAllThings\UnlockAllThings.h">
       <Filter>UnlockAllThings</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Rascunho.txt" />
+    <ClInclude Include="Markers\Markers.h">
+      <Filter>Markers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

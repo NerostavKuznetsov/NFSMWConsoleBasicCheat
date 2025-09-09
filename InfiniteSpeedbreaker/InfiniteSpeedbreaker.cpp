@@ -21,7 +21,7 @@ __/ /  _  / / /  __/ _  / _  / / /  / / /_ /  __/     ____/ /__  /_/ /  __/  __/
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para vermelho brilhante
 		std::wcout << L"\n[!] Failed to read memory at address!"; // ➡️ Mensagem de erro se a leitura falhar
 		Sleep(1666); // ➡️ Pausa para permitir que o usuário veja a mensagem de erro
-		return; // ➡️ Sai da função se a leitura falhar
+		return; // ➡️ Sai da função se a leitura falhar 
     }
 
 	bool Status = currentValue[0] == bytes_OFF[0] && currentValue[1] == bytes_OFF[1]; // ➡️ Se os bytes atuais forem iguais aos bytes_OFF(disabled), Status será true, indicando que o cheat está desligado. Se forem diferentes, Status será false, indicando que o cheat está ligado

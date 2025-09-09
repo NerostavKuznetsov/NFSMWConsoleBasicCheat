@@ -22,6 +22,7 @@
     <ClCompile Include="Cash\Cash.cpp" />
     <ClCompile Include="InfiniteNitrous\InfiniteNitrous.cpp" />
     <ClCompile Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.cpp" />
+    <ClCompile Include="Markers.cpp" />
     <ClCompile Include="NeverBusted\NeverBusted.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="UnlockAllThings\UnlockAllThings.cpp" />
@@ -30,6 +31,7 @@
     <ClInclude Include="Cash\Cash.h" />
     <ClInclude Include="InfiniteNitrous\InfiniteNitrous.h" />
     <ClInclude Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.h" />
+    <ClInclude Include="Markers\Markers.h" />
     <ClInclude Include="NeverBusted\NeverBusted.h" />
     <ClInclude Include="Source\Includes.h" />
     <ClInclude Include="UnlockAllThings\UnlockAllThings.h" />
@@ -106,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Source;$(ProjectDir)NeverBusted;$(ProjectDir)InfiniteSpeedbreaker;$(ProjectDir)InfiniteNitrous;$(ProjectDir)UnlockAllThings;$(ProjectDir)Cash;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Markers;$(ProjectDir)Source;$(ProjectDir)NeverBusted;$(ProjectDir)InfiniteSpeedbreaker;$(ProjectDir)InfiniteNitrous;$(ProjectDir)UnlockAllThings;$(ProjectDir)Cash;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

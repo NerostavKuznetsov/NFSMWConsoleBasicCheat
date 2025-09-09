@@ -1,4 +1,4 @@
-﻿#include "Includes.h"
+﻿#include "Includes.h" // ➡️ Inclui o arquivo de cabeçalho com todas as bibliotecas e definições necessárias
 
 /*
 * NFSMW - NK Cheats / NFSMW - Console Basic Cheat
@@ -24,26 +24,26 @@ _  /|  / _  __/   ____/ /_  /  / / __ |/ |/ /   _/_____/     / /___  / /_/ /  / 
 /_/ |_/  /_/      /____/ /_/  /_/  ____/|__/                 \____/  \____//_/ /_//____/ \____//_/  \___/      /_____/ \__,_/ /____/ /_/  \___/      \____/  /_/ /_/\___/\__,_/ \__/   )"; 
 
     std::wcout << "\n\n";
-    std::wcout << "                                                                                                                                                                          By: Nerostav Kuznetsov\n";
+    std::wcout << "                                                                                                                                                                          By: Nerostav Kuznetsov\n"; 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para roxo brilhante
-    std::wcout << "Steam:    https://steamcommunity.com/profiles/76561198304587027   \n";
-    std::wcout << "Insta:    https://instagram.com/nrstv_kuznetsov                    \n";
-    std::wcout << "Github:   https://github.com/NerostavKuznetsov                      \n";
-    std::wcout << "Youtub:   https://youtube.com/@Kuzntsv-666                           \n";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY); // ➡️
+	std::wcout << "Steam:    https://steamcommunity.com/profiles/76561198304587027   \n"; // Typo: Steam -> STEAM
+	std::wcout << "Insta:    https://instagram.com/nrstv_kuznetsov                    \n"; // Typo: Insta -> Instagram
+	std::wcout << "Github:   https://github.com/NerostavKuznetsov                      \n"; // Typo: GitHub -> Github
+	std::wcout << "Youtub:   https://youtube.com/@Kuzntsv-666                           \n"; // Typo: Youtub -> Youtube
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para verde brilhante
     std::wcout << L" \n";
     std::wcout << L"╔═════════════════════════════════════╗\n";
     std::wcout << L"║              MAIN MENU              ║\n";
     std::wcout << L"╠═════════════════════════════════════╣\n";
-    std::wcout << L"║ 1  ➡️  Cash                         ║\n"; // OK
-    std::wcout << L"║ 2  ➡️  Infinite Nitrous             ║\n"; // OK
-    std::wcout << L"║ 3  ➡️  Infinite Speedbreaker        ║\n"; // OK
-    std::wcout << L"║ 4  ➡️  Never Busted                 ║\n"; // OK
-    std::wcout << L"║ 5  ➡️  Unlock All Things            ║\n"; // OK
-    std::wcout << L"║ 6  ➡️  *                            ║\n";
-    std::wcout << L"║ 7  ➡️  *                            ║\n";
-    std::wcout << L"║ 8  ➡️  *                            ║\n";
-    std::wcout << L"║ 9  ➡️  *                            ║\n";
+    std::wcout << L"║ 1  ➡️  Cash                         ║\n"; // OKAY
+    std::wcout << L"║ 2  ➡️  Infinite Nitrous             ║\n"; // OKAY
+    std::wcout << L"║ 3  ➡️  Infinite Speedbreaker        ║\n"; // OKAY
+    std::wcout << L"║ 4  ➡️  Never Busted                 ║\n"; // OKAY
+    std::wcout << L"║ 5  ➡️  Markers                      ║\n"; // OKAY
+    std::wcout << L"║ 6  ➡️  Unlock All Things            ║\n"; // OKAY
+    std::wcout << L"║ 7  ➡️  *                            ║\n"; // PENDING...
+    std::wcout << L"║ 8  ➡️  *                            ║\n"; // PENDING...
+    std::wcout << L"║ 9  ➡️  *                            ║\n"; // PENDING...
     std::wcout << L"║ z  ➡️  Exit                         ║\n";
     std::wcout << L"╠═════════════════════════════════════╣\n";
     std::wcout << L"║  Need For Speed Most Wanted (2005)  ║\n";
@@ -102,7 +102,7 @@ DWORD GetModuleBaseAddress(DWORD ProcID, const wchar_t* modBaseName) // ➡️ P
 	return baseAddress; // ➡️ Retorna o endereço base do módulo (ou 0 se não encontrado)
 }
 
-int main()
+int main() // ➡️ Função principal do programa
 {
     _tsetlocale(LC_ALL, _T("PORTUGUESE")); // Posso usar -> setlocale(LC_ALL, "PT_BR.UTF-8"); 
 	setlocale(LC_ALL, "PT_BR.UTF-8"); // ➡️ Português do Brasil com UTF-8. Isso garante que acentos, caracteres especiais e algumas formatações de texto funcionem corretamente
@@ -141,7 +141,7 @@ int main()
 
 		while (true) // ➡️ Loop para capturar a entrada do usuário
         {
-            wchar_t ch = _getwch();
+			wchar_t ch = _getwch(); // ➡️ Captura um caractere da entrada do usuário sem exibir no console
 
 			if (ch == 13) break; // ➡️ ENTER 
 			if (ch == L'\b' && !input.empty()) // ➡️ BACKSPACE
@@ -160,14 +160,14 @@ int main()
         {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para vermelho brilhante
 			std::wcout << L"\n[!] Empty option\n"; // ➡️ Mensagem de erro se a entrada estiver vazia
-            Sleep(1666);
+			Sleep(1666); // ➡️ Pausa para permitir que o usuário veja a mensagem de erro
 			continue; // ➡️ Continua o loop se a entrada for vazia
         }
 		else if (input.length() > 1) // ➡️ Verifica se a entrada tem mais de um caractere
         {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para vermelho brilhante
-            std::wcout << L"\n[!] Invalid option. Please enter a single digit or 'z' to exit\n";
-            Sleep(1666);
+			std::wcout << L"\n[!] Invalid option. Please enter a single digit or 'z' to exit\n"; // ➡️ Mensagem de erro se a entrada tiver mais de um caractere
+			Sleep(1666); // ➡️ Pausa para permitir que o usuário veja a mensagem de erro
 			continue; // ➡️ Continua o loop se a entrada for inválida
         }
         
@@ -175,39 +175,43 @@ int main()
 
 		switch (option) // ➡️ Switch para selecionar a função com base na opção do usuário
         {
-        case '1':
-			system("cls");
+		case '1': // ➡️ Opção 1 para Cash
+			system("cls"); // ➡️ Limpa a tela do console
 			FunctionCash(hProcess); // ➡️ Chama a função para adicionar dinheiro
 			break; // ➡️ Sai do switch
-        case '2':  
-            system("cls");
+		case '2': // ➡️ Opção 2 para Infinite Nitrous
+			system("cls"); // ➡️ Limpa a tela do console
 			FunctionInfiniteNitrous(hProcess); // ➡️ Chama a função para Nitrous Infinito
-			break;
-        case '3':
-            system("cls");
+			break; // ➡️ Sai do switch
+		case '3': // ➡️ Opção 3 para Infinite Speedbreaker
+			system("cls"); // ➡️ Limpa a tela do console
 			FunctionInfiniteSpeedbreaker(hProcess); // ➡️ Chama a função para Speedbreaker Infinito
-            break;
-        case '4':
-            system("cls");
+			break; // ➡️ Sai do switch
+		case '4': // ➡️ Opção 4 para Never Busted
+			system("cls"); // ➡️ Limpa a tela do console
 			FunctionNeverBusted(hProcess); // ➡️ Chama a função para Never Busted
-            break;
-        case '5':
-			system("cls");
+			break; // ➡️ Sai do switch
+		case'5': // ➡️ Opção 5 para Markers
+			system("cls"); // ➡️ Limpa a tela do console
+            FunctionMarkers(hProcess); // ➡️ Chama a função para Markers
+			break; // ➡️ Sai do switch
+		case '6': // ➡️ Opção 6 para Unlock All Things
+			system("cls"); // ➡️ Limpa a tela do console
 			FunctionUnlockAllThings(hProcess); // ➡️ Chama a função para Desbloquear Tudo
-            break;
-        case 'z':
-            system("cls");
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
-            std::wcout << L"[!] Closing the program";
-            for (int i = 0; i < 6; i++)
+			break; // ➡️ Sai do switch
+		case 'z': // ➡️ Opção 'z' para sair
+			system("cls"); // ➡️ Limpa a tela do console
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para vermelho brilhante
+			std::wcout << L"[!] Closing the program"; // ➡️ Mensagem de encerramento
+			for (int i = 0; i < 6; i++) // ➡️ Animação de pontos
             {
-                std::wcout << L".";
-                Sleep(666);
+				std::wcout << L"."; // ➡️ Imprime um ponto
+				Sleep(666); // ➡️ Pausa por 666 milissegundos
             }
-            Sleep(1666);
+			Sleep(1666); // ➡️ Pausa para permitir que o usuário veja a mensagem de encerramento
 			running = FALSE; // ➡️ Define running como FALSE para sair do loop e encerrar o programa
-            break;
+			break; // ➡️ Sai do switch
         }
     }
-    CloseHandle(hProcess);
+	CloseHandle(hProcess); // ➡️ Fecha o handle do processo para liberar recursos
 }
