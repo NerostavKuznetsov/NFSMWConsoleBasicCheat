@@ -11,10 +11,11 @@ _  / / /__  __ \_  /_  __ \  ___/_  //_/    __  /| |_  /__  /    __  /  __  __ \
 / /_/ / _  / / /  / / /_/ / /__ _  ,<       _  ___ |  / _  /     _  /   _  / / /  / _  / / /  /_/ /_(__  ) 
 \____/  /_/ /_//_/  \____/\___/ /_/|_|      /_/  |_/_/  /_/      /_/    /_/ /_//_/  /_/ /_/_\__, / /____/  
                                                                                            /____/           )";
-    uintptr_t Address = 0x926124;
+    uintptr_t Address = 0x926124; // All lock 
     BYTE bytes_ON[] = { 1 };
     BYTE bytes_OFF[] = { 0 };
     BYTE currentValue[1] = { 0 };
+    //BYTE 
 
     if (!ReadProcessMemory(hProcess, (LPCVOID)Address, currentValue, sizeof(currentValue), nullptr)) 
     {
@@ -24,7 +25,7 @@ _  / / /__  __ \_  /_  __ \  ___/_  //_/    __  /| |_  /__  /    __  /  __  __ \
         return;
     }
 
-	bool Status = currentValue[0] == bytes_OFF[0];                                                                                           
+	bool Status = (currentValue[0] == bytes_OFF[0]);                                                                                           
 
     std::wcout << L"\n\n[!] UnlockAllThings is " << (Status ? L"disabled\n" : L"enabled\n");
     std::wcout << L"[!] Press INSERT to enable/disable or ESC to return to the main menu...\n";

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bounty.cpp" />
     <ClCompile Include="Cash\Cash.cpp" />
     <ClCompile Include="InfiniteNitrous\InfiniteNitrous.cpp" />
     <ClCompile Include="InfiniteSpeedbreaker\InfiniteSpeedbreaker.cpp" />
@@ -35,6 +36,13 @@
     <ClInclude Include="NeverBusted\NeverBusted.h" />
     <ClInclude Include="Source\Includes.h" />
     <ClInclude Include="UnlockAllThings\UnlockAllThings.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

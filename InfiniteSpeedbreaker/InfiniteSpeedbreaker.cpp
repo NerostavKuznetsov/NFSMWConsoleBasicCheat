@@ -24,7 +24,7 @@ __/ /  _  / / /  __/ _  / _  / / /  / / /_ /  __/     ____/ /__  /_/ /  __/  __/
 		return; // ➡️ Sai da função se a leitura falhar 
     }
 
-	bool Status = currentValue[0] == bytes_OFF[0] && currentValue[1] == bytes_OFF[1]; // ➡️ Se os bytes atuais forem iguais aos bytes_OFF(disabled), Status será true, indicando que o cheat está desligado. Se forem diferentes, Status será false, indicando que o cheat está ligado
+	bool Status = (currentValue[0] == bytes_OFF[0] && currentValue[1] == bytes_OFF[1]); // ➡️ Se os bytes atuais forem iguais aos bytes_OFF(disabled), Status será true, indicando que o cheat está desligado. Se forem diferentes, Status será false, indicando que o cheat está ligado
 
 	std::wcout << L"\n[!] Infinite Speedbreaker is " << (Status ? L"disabled\n" : L"enabled\n"); // ➡️ Exibe o status atual do cheat
 	std::wcout << L"[!] Press INSERT to enable/disable Infinite Speedbreaker or ESC to return to the main menu...\n"; // ➡️ Instruções para o usuário

@@ -25,7 +25,7 @@ _  /|  / _  __/   ____/ /_  /  / / __ |/ |/ /   _/_____/     / /___  / /_/ /  / 
 
 	std::wcout << "\n\n"; // ➡️ Duas novas linhas para espaçamento
 	std::wcout << "                                                                                                                                                                          By: Nerostav Kuznetsov\n"; // Typo: By -> BY 
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para roxo brilhante
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para roxo brilhante
 	std::wcout << "Steam:    https://steamcommunity.com/profiles/76561198304587027     \n"; // Typo: Steam -> STEAM
 	std::wcout << "Insta:    https://instagram.com/nrstv_kuznetsov                      \n"; // Typo: Insta -> Instagram
 	std::wcout << "Github:   https://github.com/NerostavKuznetsov/NFSMWConsoleBasicCheat \n"; // Typo: GitHub -> Github
@@ -41,9 +41,9 @@ _  /|  / _  __/   ____/ /_  /  / / __ |/ |/ /   _/_____/     / /___  / /_/ /  / 
     std::wcout << L"║ 4  ➡️  Never Busted                 ║\n"; // OKAY
     std::wcout << L"║ 5  ➡️  Markers                      ║\n"; // OKAY
     std::wcout << L"║ 6  ➡️  Unlock All Things            ║\n"; // OKAY
-    std::wcout << L"║ 7  ➡️  *                            ║\n"; // PENDING...
-    std::wcout << L"║ 8  ➡️  *                            ║\n"; // PENDING...
-    std::wcout << L"║ 9  ➡️  *                            ║\n"; // PENDING...
+    std::wcout << L"║ 7  ➡️  Bounty                       ║\n"; // PENDING...
+    std::wcout << L"║ 8  ➡️  Career Car Slot Limit        ║\n"; // PENDING...
+    std::wcout << L"║ 9  ➡️  Heat Level Cops              ║\n"; // PENDING...
     std::wcout << L"║ z  ➡️  Exit                         ║\n";
     std::wcout << L"╠═════════════════════════════════════╣\n";
     std::wcout << L"║  Need For Speed Most Wanted (2005)  ║\n";
@@ -76,7 +76,7 @@ DWORD GetProcessIdByName(const std::wstring& processName) // ➡️ Pegar o ID d
     }
 }
 
-DWORD GetModuleBaseAddress(DWORD ProcessID, const wchar_t* modBaseName) // ➡️ Pegar o endereço base do processo .exe (PID)
+uintptr_t GetModuleBaseAddress(DWORD ProcessID, const wchar_t* modBaseName) // ➡️ Pegar o endereço base do processo .exe (PID)
 {
 	DWORD baseAddress = 0; // ➡️ Inicializa o endereço base como 0
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, ProcessID); // ➡️ Cria um snapshot dos módulos (DLLs e o próprio .exe) carregados no processo especificado por ProcID
@@ -116,7 +116,7 @@ int main() // ➡️ Função principal do programa
 		system("cls"); // ➡️ Limpa a tela do console
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY); // ➡️ Define a cor do texto para verde brilhante
 
-		std::wcout << L"[~] waiting for speed.exe"; // ➡️ Mensagem de espera
+		std::wcout << L"[~] Waiting for speed.exe"; // ➡️ Mensagem de espera
 		for (int i = 0; i < 6; i++) // ➡️ Animação de pontos
         {
 			std::wcout << L"."; // ➡️ Imprime um ponto
@@ -135,7 +135,7 @@ int main() // ➡️ Função principal do programa
 		ShowMenu(); // ➡️ Exibe o menu principal
 		std::wcout << L"\n[!] Base address 0x" << std::hex << modBaseAddr << L"\n"; // ➡️ Exibe o endereço base do módulo em hexadecimal
 		std::wcout << L"[!] ProcessID: " << std::dec << PID << L"\n"; // ➡️ Exibe o PID do processo em decimal
-		std::wcout << L"[?] Enter your option (0-9): "; // ➡️ Solicita ao usuário que insira uma opção
+		std::wcout << L"[?] Enter your option (1-9): "; // ➡️ Solicita ao usuário que insira uma opção
 		std::wstring input; // ➡️ Usado para armazenar a entrada do usuário
 
 		while (true) // ➡️ Loop para capturar a entrada do usuário

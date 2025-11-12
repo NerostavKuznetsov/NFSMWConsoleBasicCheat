@@ -57,7 +57,7 @@ _  /    _  __ `/_  ___/_  __ \
 				input.pop_back(); // ➡️ Se o usuário pressionar BACKSPACE e a entrada não estiver vazia, remove o último caractere da entrada
 				std::wcout << L"\b \b"; // ➡️ Move o cursor para trás, imprime um espaço em branco para apagar o caractere e move o cursor de volta
 			}
-			else if (iswdigit(ch)) // ➡️ Aceita apenas dígitos
+			 if (iswdigit(ch)) // ➡️ Aceita apenas dígitos
 			{
 				input += ch; // ➡️ Adiciona o caractere digitado à entrada
 				std::wcout << ch; // ➡️ Exibe o caractere digitado no console

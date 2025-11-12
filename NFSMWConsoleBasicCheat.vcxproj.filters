@@ -23,6 +23,9 @@
     <Filter Include="Markers">
       <UniqueIdentifier>{c0d8a25e-3aad-4444-ad96-6305bd202cf1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Bounty">
+      <UniqueIdentifier>{6f8faa40-bf2d-4a79-873a-468eba20850f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cash\Cash.cpp">
@@ -45,6 +48,9 @@
     </ClCompile>
     <ClCompile Include="Markers\Markers.cpp">
       <Filter>Markers</Filter>
+    </ClCompile>
+    <ClCompile Include="Bounty.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -69,5 +75,12 @@
     <ClInclude Include="Markers\Markers.h">
       <Filter>Markers</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE.txt" />
   </ItemGroup>
 </Project>
